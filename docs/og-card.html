@@ -57,13 +57,14 @@
     width: 812px; background: #06122c;
     border: 2px solid #1d4ed8; padding: 16px 20px 18px;
   }
-  .panel .ph { display: flex; align-items: center; gap: 10px; font-family: "Space Mono", monospace; font-size: 14px; color: #9db4e8; letter-spacing: 0.12em; padding-bottom: 10px; border-bottom: 1px dashed #9db4e8; }
+  .panel .ph { display: flex; align-items: center; justify-content: space-between; font-family: "Space Mono", monospace; font-size: 14px; color: #9db4e8; letter-spacing: 0.12em; padding-bottom: 10px; border-bottom: 1px dashed #9db4e8; }
+  .panel .ph-l { display: flex; align-items: center; gap: 10px; }
   .panel .led { width: 10px; height: 10px; background: #3b82f6; }
+  .panel .ph-r { letter-spacing: 0.02em; }
   .panel .cmd { margin-top: 14px; font-family: "Space Mono", monospace; font-size: 22px; color: #ffffff; white-space: nowrap; display: flex; align-items: center; }
   .panel .dollar { color: #9db4e8; }
   .panel .cursor { display: inline-block; width: 13px; height: 26px; background: #3b82f6; margin-left: 8px; }
 
-  .url { position: absolute; right: 72px; bottom: 68px; font-family: "Space Mono", monospace; font-size: 18px; color: #9db4e8; }
 </style>
 </head>
 <body>
@@ -88,11 +89,10 @@
     </div>
 
     <div class="panel">
-      <div class="ph"><span class="led"></span>CLAUDE CODE · QUICK INSTALL</div>
+      <div class="ph"><span class="ph-l"><span class="led"></span>CLAUDE CODE · QUICK INSTALL</span><span class="ph-r">aewing.github.io/skills</span></div>
       <div class="cmd"><span class="dollar">$&nbsp;</span>/plugin install rigor-skills@aewing-skills<span class="cursor"></span></div>
     </div>
 
-    <div class="url">aewing.github.io/skills</div>
   </div>
 </body>
 </html>
