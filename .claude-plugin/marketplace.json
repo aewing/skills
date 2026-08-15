@@ -1,0 +1,24 @@
+{
+  "name": "aewing-skills",
+  "owner": {
+    "name": "Drew Ewing",
+    "email": "aewing@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Curated agent skills: execution-rigor, truth-loop, and goodtalk.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "rigor-skills",
+      "description": "Execution and reasoning rigor loops (execution-rigor, truth-loop) plus instruction-language standards (goodtalk)",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/execution-rigor",
+        "./skills/truth-loop",
+        "./skills/goodtalk"
+      ]
+    }
+  ]
+}
