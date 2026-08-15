@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>skills — curated agent skills, rigor with calm</title>
+  <meta name="description" content="Ten portable agent skills: finish long-horizon work for real, reason past plausible stories, keep instructions honest, and build clearer responses and TUIs.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="logo"><span class="pixel">■</span> skills</span>
+    <nav>
+      <a href="#skills">skills</a>
+      <a href="#install">install</a>
+      <a href="https://github.com/aewing/skills" target="_blank" rel="noopener">github ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow">aewing/skills · public</span>
+      <h1>Curated agent skills.<br><span class="accent">Rigor with calm.</span></h1>
+      <p class="lede">
+        Ten portable skills I actually use. Finish long-horizon work for real.
+        Reason past plausible stories. Keep instructions honest. Write responses
+        and interfaces people can scan. No project law, no product names, no
+        private tooling — drop them into any agent.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#install">Install</a>
+        <a class="btn ghost" href="https://github.com/aewing/skills" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="section-sub">Each skill is a folder with a <code>SKILL.md</code> — the portable Agent Skills format.</p>
+
+      <h3 class="group-title">RIGOR CORE</h3>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">execution</span>
+          <h3>execution-rigor</h3>
+          <p>Long-horizon execution that finishes for real: observable definition-of-done, per-task verification, shortcut tripwire scans, adversarial pre-completion audit.</p>
+          <a class="more" href="../skills/execution-rigor/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">reasoning</span>
+          <h3>truth-loop</h3>
+          <p>Reasoning that converges on truth, not plausibility: hypotheses kept alive, evidence that can hurt, contradiction ledgers, a falsifier on every conclusion.</p>
+          <a class="more" href="../skills/truth-loop/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">language</span>
+          <h3>goodtalk</h3>
+          <p>Audit and recode instruction language so humans and agents stop accidentally pressuring each other. Research / standards / suggest / execute / recode / publish modes.</p>
+          <a class="more" href="../skills/goodtalk/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+      </div>
+
+      <h3 class="group-title">MOVING &amp; PROVING WORK</h3>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">momentum</span>
+          <h3>keep-going</h3>
+          <p>Maintain progress on multi-step, long-running work: explicit remaining state, one causal unit at a time, milestone reviews, honest handoffs.</p>
+          <a class="more" href="../skills/keep-going/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">focus</span>
+          <h3>coherence-engine</h3>
+          <p>Focus and pruning for long-horizon tasks: flow perception, cut what does not serve the core intent, autonomy with a clear reversible line.</p>
+          <a class="more" href="../skills/coherence-engine/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">proof</span>
+          <h3>verification-hygiene</h3>
+          <p>Prove claims against the real artifact: the narrowest falsifying check, required consequences per change type, reject false green.</p>
+          <a class="more" href="../skills/verification-hygiene/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">review</span>
+          <h3>adversarial-reviewer</h3>
+          <p>Evidence-first review with one verdict — SHIP / BLOCKED / REWORK / MORE PROOF — highest blast radius first, smallest honest remediation.</p>
+          <a class="more" href="../skills/adversarial-reviewer/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+      </div>
+
+      <h3 class="group-title">RESPONSES &amp; CRAFT</h3>
+      <div class="grid">
+        <div class="card">
+          <span class="tag">responses</span>
+          <h3>wat</h3>
+          <p>ADHD-friendly response overlay: answer first, one screen, evidence kept, one next action. For status, summaries, and handoffs.</p>
+          <a class="more" href="../skills/wat/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">fun</span>
+          <h3>roast-review</h3>
+          <p>Evidence-backed critique: funny, ruthless, specific reduction to the target's weaknesses, plus a concrete escape plan.</p>
+          <a class="more" href="../skills/roast-review/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+        <div class="card">
+          <span class="tag">craft</span>
+          <h3>tui-design</h3>
+          <p>Terminal UI craft: layout paradigms, keyboard and focus models, semantic color, animation, anti-pattern and compatibility checklists.</p>
+          <a class="more" href="../skills/tui-design/SKILL.md" target="_blank">read SKILL.md →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <h2>Install</h2>
+      <p class="section-sub">Pick the path that matches your agent.</p>
+
+      <div class="screen">
+        <div class="screen-head"><span>CLAUDE CODE — PLUGIN MARKETPLACE</span><span>1-2-3</span></div>
+        <pre><span class="cmt"># in Claude Code</span>
+<span class="cmd">/plugin marketplace add aewing/skills</span>
+<span class="cmd">/plugin install rigor-skills@aewing-skills</span></pre>
+      </div>
+
+      <div class="screen">
+        <div class="screen-head"><span>ANY AGENT — COPY INSTALLER</span><span>ALT</span></div>
+        <pre><span class="cmd">git clone https://github.com/aewing/skills.git</span>
+<span class="cmd">cd skills && ./install.sh</span>
+
+<span class="cmt"># options</span>
+<span class="cmd">./install.sh --list</span>
+<span class="cmd">./install.sh --dry-run</span>
+<span class="cmd">./install.sh --target ~/.config/your-agent/skills</span></pre>
+      </div>
+
+      <p class="install-note">
+        Marketplace users update with <code>/plugin marketplace update aewing-skills</code>.
+        Install-script users <code>git pull</code> and re-run <code>./install.sh</code>
+        when a skill changes. The repo self-governs: its language standards live in
+        <code>.goodtalk/standards.json</code>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>MIT — the skills are instruction text; take them and make them yours.</p>
+    <p style="margin-top:0.5rem;">Type: Silkscreen (SIL OFL) · <a href="https://github.com/aewing/skills" target="_blank" rel="noopener">github.com/aewing/skills</a></p>
+  </footer>
+
+</body>
+</html>
