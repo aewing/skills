@@ -24,6 +24,30 @@ Use this shape:
 - One bounded decision. Omit when work can continue.
 ```
 
+For example, instead of:
+
+```text
+Alright, so I looked into the build failure. After checking the logs I noticed
+the test helper was importing from the old path, and there were two failures in
+the network layer. I also cleaned up a few things and ran the suite twice to be
+sure. The fix is in and I think we're good to merge once CI passes.
+```
+
+write:
+
+```text
+**Answer —** Build failure was a stale import in the test helper; fix is in.
+
+**Done**
+- `tests/helpers.ts` now imports from `lib/` — test suite 128 passed, 0 failed.
+
+**Next**
+- → Merge once CI passes.
+
+**Need you**
+- (omitted — work can continue)
+```
+
 Rules:
 
 - Answer first. Use plain words and one idea per line.

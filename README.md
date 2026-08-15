@@ -81,6 +81,12 @@ Each skill is a plain folder; the source of truth is the `SKILL.md` plus any
 (that is what triggers the skill), one more "when NOT to use this" line, or a
 smaller replacement for a wordy rule.
 
+The repo governs itself: the active language profile is
+`.goodtalk/standards.json`, and goodtalk runs against this repo use it. To set
+up the same for your project, copy the starter at
+`skills/goodtalk/examples/standards.json.starter` or run `goodtalk standards
+init`.
+
 ## Updating
 
 Marketplace users:

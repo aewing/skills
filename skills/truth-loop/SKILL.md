@@ -22,7 +22,7 @@ The user invoking this is signaling: **do not settle for plausible. Separate fac
 ## When NOT to use this
 
 - Small mechanical edits, typo fixes, or direct commands
-- Execution-heavy work with a clear definition of done - use `execution-rigor`
+- Execution-heavy work with a clear definition of done — use `execution-rigor`
 - Cases where the user explicitly wants a fast answer over a careful one
 - Situations where the correct next step is already known and only needs implementation
 
@@ -68,7 +68,7 @@ Maintain a single state object across phases. Update it as the model changes. Re
 
 ## Phases
 
-### 1. FRAME - name the real question
+### 1. FRAME — name the real question
 
 Before reasoning starts, write the central question in a form that can be answered.
 
@@ -78,7 +78,7 @@ Good: "Why does the payments service report the provider unconfigured even thoug
 
 Define decision criteria up front. If the user gave a vague task and the wrong frame would waste work, propose the frame and ask for confirmation. If the likely frame is obvious, proceed and state it.
 
-### 2. MAP - facts before interpretation
+### 2. MAP — facts before interpretation
 
 Gather the territory:
 
@@ -90,7 +90,7 @@ Gather the territory:
 
 Record facts as facts and interpretations as interpretations. A file comment, old doc, or prior memory note is evidence of intent, not proof of current runtime behavior.
 
-### 3. HYPOTHESES - keep alternatives alive
+### 3. HYPOTHESES — keep alternatives alive
 
 Generate at least two live hypotheses unless the evidence already makes one impossible. Each hypothesis needs:
 
@@ -101,7 +101,7 @@ Generate at least two live hypotheses unless the evidence already makes one impo
 
 If you only have one hypothesis, keep mapping. A single-hypothesis loop is usually confirmation bias with better formatting.
 
-### 4. INTERROGATE - seek the evidence that can hurt
+### 4. INTERROGATE — seek the evidence that can hurt
 
 Test assumptions against primary evidence. Prefer checks that can change your mind:
 
@@ -113,7 +113,7 @@ Test assumptions against primary evidence. Prefer checks that can change your mi
 
 Every "probably", "obviously", "just", or "should" is a tripwire unless it is backed by a fact in `known_facts`.
 
-### 5. SYNTHESIZE - choose the model that explains more
+### 5. SYNTHESIZE — choose the model that explains more
 
 When the evidence narrows, synthesize:
 
@@ -125,7 +125,7 @@ When the evidence narrows, synthesize:
 
 Do not change the decision criteria to fit the answer. If the answer does not satisfy the original frame, re-frame explicitly and explain why.
 
-### 6. STUCK-CHECK - re-map after repeated failure
+### 6. STUCK-CHECK — re-map after repeated failure
 
 If two iterations do not add new evidence or only restate the same model, stop and re-map:
 
@@ -137,7 +137,7 @@ If two iterations do not add new evidence or only restate the same model, stop a
 
 Write a one-paragraph diagnosis before continuing. No diagnosis means you are not stuck productively; you are looping.
 
-### 7. ADVERSARY - pre-conclusion audit
+### 7. ADVERSARY — pre-conclusion audit
 
 Before declaring a conclusion, run an adversarial pass. Use a subagent when available; otherwise perform the pass yourself explicitly.
 
@@ -168,7 +168,7 @@ Brief:
 
 Fold flags into `state.adversary_flags` and address material ones. If ADVERSARY changes the answer, reopen the loop.
 
-### 8. OUROBOROS - cold completeness check
+### 8. OUROBOROS — cold completeness check
 
 Do a fresh-perspective pass with only:
 
@@ -183,15 +183,15 @@ Ask:
 
 If the objection is material, add it to unknowns and run another MAP/HYPOTHESES/INTERROGATE cycle.
 
-### 9. EMIT - conclusion, evidence, falsifier
+### 9. EMIT — conclusion, evidence, falsifier
 
 Final response must include:
 
-1. **Answer** - direct conclusion, not a tour of the reasoning.
-2. **Why** - the decisive evidence and why alternatives lost.
-3. **Falsifier** - one observable that would change the conclusion.
-4. **Uncertainty** - what remains unknown or lower-confidence.
-5. **Next action** - the smallest action implied by the conclusion.
+1. **Answer** — direct conclusion, not a tour of the reasoning.
+2. **Why** — the decisive evidence and why alternatives lost.
+3. **Falsifier** — one observable that would change the conclusion.
+4. **Uncertainty** — what remains unknown or lower-confidence.
+5. **Next action** — the smallest action implied by the conclusion.
 
 Do not hide uncertainty to sound useful. A bounded "I do not know yet" is better than an unearned answer.
 

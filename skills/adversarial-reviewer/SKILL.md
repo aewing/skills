@@ -12,6 +12,13 @@ the fix while acting as the independent reviewer.
 Load the domain skill whose boundary the change touches only when that boundary
 is actually at risk. Keep the review independent of any implementation skill.
 
+## When NOT to use this
+
+- When you are the implementer and there is no fresh pass or independent
+  artifact: review needs distance from the work.
+- For routine single-commit review, a focused review usually suffices; this
+  skill is the milestone, PR, or claim-level gate.
+
 ## Inputs
 
 - The requested outcome.

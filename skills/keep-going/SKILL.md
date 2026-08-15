@@ -8,6 +8,11 @@ description: Maintain progress on multi-step, long-running, or open-ended work. 
 Maintain one outcome and an explicit work model. Do not ask the user to choose a
 next step that follows directly from the stated goal and repository authority.
 
+Pairs with the loop skills: if the task already runs under `execution-rigor`
+(execution contract) or `truth-loop` (reasoning contract), defer to their
+contract; `keep-going` is the lighter alternative for when that weight is not
+needed.
+
 ## Loop
 
 1. Restate the outcome and current falsifier in one sentence.

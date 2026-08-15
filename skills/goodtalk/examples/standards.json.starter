@@ -1,0 +1,40 @@
+{
+  "schema": "goodtalk/standards@1",
+  "id": "my-project",
+  "name": "My project Goodtalk standards",
+  "status": "proposed",
+  "version": "0.1.0",
+  "updated": "<date>",
+  "authority": {
+    "precedence": [
+      "user-request",
+      "<constitution-or-highest-owner>",
+      "narrowest-applicable-local-owner",
+      "selected-goodtalk-standards",
+      "external-research"
+    ],
+    "owners": {
+      "<fact-area>": "<path-to-owning-document>"
+    },
+    "protected": [
+      "<paths-never-rewritten-by-goodtalk>"
+    ]
+  },
+  "profiles": {
+    "documentation": {
+      "label": "One owner, one fact",
+      "scope": "<which documents this profile governs>",
+      "rules": [
+        {
+          "id": "doc.owner-first",
+          "statement": "Put each durable fact in one owner; other documents state only their local consequence and link to that owner.",
+          "owner": "<path-to-owning-document>",
+          "reason": "One authority is easier to retrieve, update, and verify than copied guidance.",
+          "proof": "Every changed claim has one owner and an exact link.",
+          "source": "project",
+          "status": "proposed"
+        }
+      ]
+    }
+  }
+}

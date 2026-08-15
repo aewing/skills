@@ -1,6 +1,6 @@
 ---
 name: coherence-engine
-description: A system of execution for long-horizon tasks to keep things focused and effective. Helpful to avoid hollowing, when considering what to do next, when faced with unexpected failures or problems.
+description: A system of execution for long-horizon tasks to keep things focused and effective. Use when work is drifting or hollowing out, when deciding the next move, or when facing unexpected failures.
 ---
 
 # Initialization

@@ -8,6 +8,13 @@ description: Verify code, package, test, deletion, and delivery claims against t
 Use the owning repository's check, test, build, dependency, and boundary gates;
 do not copy command catalogs into this skill.
 
+## When NOT to use this
+
+- Design or exploration with no claim on the line yet — there is nothing to
+  falsify.
+- When a narrower, already-passing owner gate directly covers the claim; this
+  skill is for choosing and proving the narrowest check, not ritual re-running.
+
 ## Procedure
 
 1. Write the exact claim being verified.

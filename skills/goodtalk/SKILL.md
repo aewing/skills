@@ -83,7 +83,11 @@ install/sync/publish manage distribution.
 Before `suggest`, `execute`, or `recode`, locate `.goodtalk/standards.json` and load only
 the profiles relevant to the requested scope. If it is absent, run the
 equivalent of `goodtalk standards init`: discover the local owner documents,
-show the proposed profile, and keep it proposed until adoption is explicit.
+show the proposed profile, and keep it proposed until adoption is explicit. A
+concrete shape to start from ships with this skill at
+[`examples/standards.json.starter`](examples/standards.json.starter); copy it,
+replace the placeholders, and keep the profile proposed until adoption is
+explicit.
 
 The active profile is a concise selector, not a second constitution. Resolve
 conflicts in this order: current user request, the project's constitution (if

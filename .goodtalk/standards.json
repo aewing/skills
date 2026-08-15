@@ -1,0 +1,119 @@
+{
+  "schema": "goodtalk/standards@1",
+  "id": "aewing-skills",
+  "name": "Skills repo Goodtalk standards",
+  "status": "active",
+  "version": "2026-08-15.1",
+  "updated": "2026-08-15",
+  "authority": {
+    "precedence": [
+      "user-request",
+      "skills/*/SKILL.md",
+      "README.md",
+      "selected-goodtalk-standards",
+      "external-research"
+    ],
+    "owners": {
+      "skills": "skills/*/SKILL.md",
+      "readme": "README.md",
+      "installer": "install.sh",
+      "marketplace": ".claude-plugin/marketplace.json"
+    },
+    "protected": [
+      "LICENSE",
+      ".git/"
+    ]
+  },
+  "profiles": {
+    "skills": {
+      "label": "Portable, high-signal agent skills",
+      "scope": "skills/*/SKILL.md and their references/",
+      "rules": [
+        {
+          "id": "skill.triggering-description",
+          "statement": "The frontmatter description names when to use the skill and what it does, under 1024 characters; 'when to use' signals belong in the description, not only the body.",
+          "owner": "skills/*/SKILL.md",
+          "reason": "The description is the primary triggering mechanism; clarity there is worth more than body prose.",
+          "proof": "Every description contains a trigger phrase and stays under 1024 characters.",
+          "source": "anthropic-skill-creator-and-agentskills-spec",
+          "status": "adopted"
+        },
+        {
+          "id": "skill.portable",
+          "statement": "Skills contain no project law, product names, private tooling, or broken relative links; sibling skills are referenced by name.",
+          "owner": "skills/*/SKILL.md",
+          "reason": "Portability is this repo's public contract.",
+          "proof": "A token sweep for internal names returns only intentional examples; repo-internal links resolve.",
+          "source": "project",
+          "status": "adopted"
+        },
+        {
+          "id": "skill.progressive-disclosure",
+          "statement": "Keep SKILL.md focused on the procedure (under roughly 500 lines); move reference material to references/ or examples/ one hop away.",
+          "owner": "skills/*/SKILL.md",
+          "reason": "Agents load the body on trigger; large artifacts belong one hop away.",
+          "proof": "No SKILL.md exceeds 500 lines; large artifacts live in subdirectories.",
+          "source": "anthropic-skill-creator",
+          "status": "adopted"
+        },
+        {
+          "id": "skill.sibling-boundaries",
+          "statement": "When two skills overlap or pair, each 'when NOT to use' section names the sibling and the boundary once, instead of duplicating procedure.",
+          "owner": "skills/*/SKILL.md",
+          "reason": "Clear boundaries keep the set composable without repeated instruction.",
+          "proof": "Each overlapping pair names the other by name in a when-not line.",
+          "source": "project",
+          "status": "adopted"
+        }
+      ]
+    },
+    "documentation": {
+      "label": "One owner, one fact, clear job",
+      "scope": "README.md and any human-facing docs",
+      "rules": [
+        {
+          "id": "doc.owner-first",
+          "statement": "Put each durable fact in one owner; other documents state only their local consequence and link to that owner.",
+          "owner": "README.md",
+          "reason": "One authority is easier to retrieve, update, and verify than copied guidance.",
+          "proof": "Every changed claim has one owner and an exact link.",
+          "source": "project-and-anthropic-context-engineering",
+          "status": "adopted"
+        },
+        {
+          "id": "doc.examples-earn-their-place",
+          "statement": "Keep an example only when it encodes a requirement or repairs a measured failure.",
+          "owner": "README.md",
+          "reason": "Canonical examples teach behavior without turning prose into an edge-case list.",
+          "proof": "Each retained example names the behavior it protects.",
+          "source": "project",
+          "status": "adopted"
+        }
+      ]
+    },
+    "responses": {
+      "label": "Answer, evidence, and one next move",
+      "scope": "agent and human handoffs from this repository",
+      "rules": [
+        {
+          "id": "response.lead-with-result",
+          "statement": "Lead with the answer or decision before the process narrative.",
+          "owner": "README.md",
+          "reason": "The reader should know what changed without excavating the work log.",
+          "proof": "The first sentence answers the user's question or names the current state.",
+          "source": "project",
+          "status": "adopted"
+        },
+        {
+          "id": "response.done-next-need",
+          "statement": "Use the compact shape: answer, up to three proved results, one next action, and one bounded request only when blocked.",
+          "owner": "README.md",
+          "reason": "A stable response shape reduces coordination cost without hiding proof.",
+          "proof": "Routine updates fit on one screen and expose the next edge.",
+          "source": "project",
+          "status": "adopted"
+        }
+      ]
+    }
+  }
+}
