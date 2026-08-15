@@ -1,0 +1,98 @@
+<!doctype html>
+<!--
+  Source for og-card.png (1200x630 social preview).
+  Re-render with headless Chrome, from this directory:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+      --window-size=1200,630 --screenshot=og-card.png \
+      --virtual-time-budget=2000 file://$PWD/og-card.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:"Silkscreen"; font-weight:400; src:url("assets/fonts/silkscreen-400.woff2") format("woff2"); }
+  @font-face { font-family:"Silkscreen"; font-weight:700; src:url("assets/fonts/silkscreen-700.woff2") format("woff2"); }
+  @font-face { font-family:"Space Mono"; font-weight:400; src:url("assets/fonts/spacemono-400.woff2") format("woff2"); }
+  @font-face { font-family:"Space Mono"; font-weight:700; src:url("assets/fonts/spacemono-700.woff2") format("woff2"); }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .card {
+    width: 1200px; height: 630px;
+    position: relative; overflow: hidden;
+    background-color: #0a1a3f;
+    background-image: radial-gradient(#132650 2px, transparent 2px);
+    background-size: 24px 24px;
+    font-family: "Silkscreen", "Courier New", monospace;
+    color: #ffffff;
+  }
+
+  /* screen bezel */
+  .bezel { position: absolute; inset: 18px; border: 3px solid #1d4ed8; pointer-events: none; }
+  .corner { position: absolute; width: 10px; height: 10px; background: #1d4ed8; }
+  .c-tl { top: 24px; left: 24px; } .c-tr { top: 24px; right: 24px; }
+  .c-bl { bottom: 24px; left: 24px; } .c-br { bottom: 24px; right: 24px; }
+
+  /* top brand row */
+  .top { position: absolute; top: 42px; left: 72px; right: 72px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .glyph { width: 40px; height: 40px; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 5px; }
+  .glyph i { display: block; }
+  .glyph .g1 { background: #0b1f4d; } .glyph .g2 { background: #1d4ed8; }
+  .glyph .g3 { background: #3b82f6; } .glyph .g4 { background: #0b1f4d; }
+  .brand b { font-size: 26px; font-weight: 700; letter-spacing: 0.04em; }
+  .top .src { font-family: "Space Mono", monospace; font-size: 16px; color: #9db4e8; letter-spacing: 0.08em; }
+
+  /* headline */
+  .head { position: absolute; top: 168px; left: 72px; }
+  .head h1 { font-size: 58px; font-weight: 700; line-height: 1.25; letter-spacing: 0.02em; }
+  .head h2 { font-size: 46px; font-weight: 700; line-height: 1.25; color: #3b82f6; margin-top: 6px; letter-spacing: 0.02em; }
+  .bar { width: 420px; height: 8px; background: #1d4ed8; margin-top: 26px; }
+  .sub { margin-top: 20px; font-family: "Space Mono", monospace; font-size: 20px; color: #9db4e8; max-width: 900px; line-height: 1.5; }
+
+  /* command panel */
+  .panel {
+    position: absolute; left: 72px; bottom: 46px;
+    width: 812px; background: #06122c;
+    border: 2px solid #1d4ed8; padding: 16px 20px 18px;
+  }
+  .panel .ph { display: flex; align-items: center; gap: 10px; font-family: "Space Mono", monospace; font-size: 14px; color: #9db4e8; letter-spacing: 0.12em; padding-bottom: 10px; border-bottom: 1px dashed #9db4e8; }
+  .panel .led { width: 10px; height: 10px; background: #3b82f6; }
+  .panel .cmd { margin-top: 14px; font-family: "Space Mono", monospace; font-size: 22px; color: #ffffff; white-space: nowrap; display: flex; align-items: center; }
+  .panel .dollar { color: #9db4e8; }
+  .panel .cursor { display: inline-block; width: 13px; height: 26px; background: #3b82f6; margin-left: 8px; }
+
+  .url { position: absolute; right: 72px; bottom: 68px; font-family: "Space Mono", monospace; font-size: 18px; color: #9db4e8; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="bezel"></div>
+    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+    <span class="corner c-bl"></span><span class="corner c-br"></span>
+
+    <div class="top">
+      <div class="brand">
+        <div class="glyph"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i></div>
+        <b>SKILLS</b>
+      </div>
+      <div class="src">AEWING/SKILLS · PUBLIC</div>
+    </div>
+
+    <div class="head">
+      <h1>CURATED AGENT SKILLS</h1>
+      <h2>RIGOR WITH CALM.</h2>
+      <div class="bar"></div>
+      <div class="sub">Ten portable skills. No project law, no private tooling — drop them into any agent.</div>
+    </div>
+
+    <div class="panel">
+      <div class="ph"><span class="led"></span>CLAUDE CODE · QUICK INSTALL</div>
+      <div class="cmd"><span class="dollar">$&nbsp;</span>/plugin install rigor-skills@aewing-skills<span class="cursor"></span></div>
+    </div>
+
+    <div class="url">aewing.github.io/skills</div>
+  </div>
+</body>
+</html>
