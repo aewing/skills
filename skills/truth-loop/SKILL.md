@@ -28,7 +28,7 @@ The user invoking this is signaling: **do not settle for plausible. Separate fac
 
 ## Reasoning State
 
-Maintain a single state object across phases. Update it as the model changes. Reference *the state*, not "what I said earlier."
+Maintain a single state object across phases. Update it as the model changes. Reference *the state*, not "what I said earlier." If the harness provides no built-in state surface, keep the object in a local scratch file and update it as the model changes.
 
 ```json
 {

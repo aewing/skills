@@ -26,7 +26,7 @@ The user invoking this is signaling: **don't take the easy way. If something is 
 
 ## Execution State
 
-Maintain a single state object across phases. Update it as you go. Reference _the state_, not "what I said earlier."
+Maintain a single state object across phases. Update it as you go. Reference _the state_, not "what I said earlier." If the harness has no task-list tool (TodoWrite in Claude Code), keep the state in a scratch file and update it as you go.
 
 ```json
 {
