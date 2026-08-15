@@ -1,20 +1,23 @@
 <!doctype html>
 <!--
-  Source for og-card.png (1200x630 social preview).
-  Re-render with headless Chrome, from this directory:
+  Source for docs/og-card.png (1200x630 social preview, referenced by
+  og:image in docs/index.html). Kept at repo root, NOT inside docs/, so
+  GitHub Pages never deploys it as its own page.
+
+  Re-render with headless Chrome from the repo root:
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
       --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
-      --window-size=1200,630 --screenshot=og-card.png \
-      --virtual-time-budget=2000 file://$PWD/og-card.html
+      --window-size=1200,630 --screenshot=docs/og-card.png \
+      --virtual-time-budget=2000 file://$PWD/og-card.src.html
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <style>
-  @font-face { font-family:"Silkscreen"; font-weight:400; src:url("assets/fonts/silkscreen-400.woff2") format("woff2"); }
-  @font-face { font-family:"Silkscreen"; font-weight:700; src:url("assets/fonts/silkscreen-700.woff2") format("woff2"); }
-  @font-face { font-family:"Space Mono"; font-weight:400; src:url("assets/fonts/spacemono-400.woff2") format("woff2"); }
-  @font-face { font-family:"Space Mono"; font-weight:700; src:url("assets/fonts/spacemono-700.woff2") format("woff2"); }
+  @font-face { font-family:"Silkscreen"; font-weight:400; src:url("docs/assets/fonts/silkscreen-400.woff2") format("woff2"); }
+  @font-face { font-family:"Silkscreen"; font-weight:700; src:url("docs/assets/fonts/silkscreen-700.woff2") format("woff2"); }
+  @font-face { font-family:"Space Mono"; font-weight:400; src:url("docs/assets/fonts/spacemono-400.woff2") format("woff2"); }
+  @font-face { font-family:"Space Mono"; font-weight:700; src:url("docs/assets/fonts/spacemono-700.woff2") format("woff2"); }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
