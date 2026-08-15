@@ -6,7 +6,7 @@
    Palette: blue + white, pixel-square corners.
    ============================================================ */
 
-/* Silkscreen 400/700 — retro handheld LCD type (SIL OFL 1.1).
+/* Silkscreen 400/700 — retro handheld LCD display type (SIL OFL 1.1).
    Swap for Base Pixel: replace the two src files below and update --font. */
 @font-face {
   font-family: "Silkscreen";
@@ -23,10 +23,27 @@
   src: url("assets/fonts/silkscreen-700.woff2") format("woff2");
 }
 
+/* Space Mono 400/700 — readable secondary type, warm retro-terminal
+   character that pairs with the pixel display font (SIL OFL 1.1). */
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/spacemono-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/spacemono-700.woff2") format("woff2");
+}
+
 :root {
   /* type */
   --font: "Silkscreen", "Courier New", monospace;
-  --font-body: "Silkscreen", system-ui, sans-serif;
+  --font-body: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* blue + white palette */
   --paper: #ffffff;
@@ -48,13 +65,22 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-body);
   background: var(--paper);
   color: var(--ink);
   line-height: 1.75;
   font-size: 15px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+}
+
+/* display chrome stays in the pixel font */
+h1, h2, h3, .eyebrow, .logo, nav a, .btn, .group-title, .tag, .screen-head {
+  font-family: var(--font);
+}
+
+code, kbd, pre {
+  font-family: var(--font-body);
 }
 
 a { color: var(--blue); text-decoration: none; }
@@ -205,7 +231,7 @@ h2::before {
   padding-bottom: 0.5rem;
 }
 .screen pre {
-  font-family: var(--font);
+  font-family: var(--font-body);
   font-size: 0.8rem;
   line-height: 1.9;
   white-space: pre-wrap;
