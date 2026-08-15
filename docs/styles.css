@@ -1,13 +1,12 @@
 /* ============================================================
    skills — static docs site
-   Type: Silkscreen (SIL OFL 1.1) — retro handheld LCD feel.
-   To switch to Base Pixel: drop the font files into
-   assets/fonts/ and change --font below. That is the only edit.
+   Display type: Silkscreen (SIL OFL 1.1) — retro handheld LCD feel.
+   Secondary type: Space Mono (SIL OFL 1.1) — readable, terminal-warm.
+   To switch to Base Pixel: replace the silkscreen src files and
+   update --font. The secondary family stays as is.
    Palette: blue + white, pixel-square corners.
    ============================================================ */
 
-/* Silkscreen 400/700 — retro handheld LCD display type (SIL OFL 1.1).
-   Swap for Base Pixel: replace the two src files below and update --font. */
 @font-face {
   font-family: "Silkscreen";
   font-style: normal;
@@ -22,9 +21,6 @@
   font-display: swap;
   src: url("assets/fonts/silkscreen-700.woff2") format("woff2");
 }
-
-/* Space Mono 400/700 — readable secondary type, warm retro-terminal
-   character that pairs with the pixel display font (SIL OFL 1.1). */
 @font-face {
   font-family: "Space Mono";
   font-style: normal;
@@ -40,29 +36,41 @@
   src: url("assets/fonts/spacemono-700.woff2") format("woff2");
 }
 
+/* ---- design tokens ---- */
 :root {
-  /* type */
   --font: "Silkscreen", "Courier New", monospace;
   --font-body: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* blue + white palette */
   --paper: #ffffff;
-  --sky: #eef3ff;          /* light blue-white panel */
-  --ink: #0b1f4d;          /* deep navy text */
-  --blue: #1d4ed8;         /* primary blue */
-  --blue-bright: #3b82f6;  /* highlight */
-  --line: #d8e2f7;         /* hairline border */
-  --screen: #0a1a3f;       /* handheld screen panel */
+  --sky: #eef3ff;
+  --ink: #0b1f4d;
+  --ink-soft: #33487d;
+  --blue: #1d4ed8;
+  --blue-bright: #3b82f6;
+  --line: #d8e2f7;
+  --screen: #0a1a3f;
   --screen-text: #ffffff;
-  --screen-dim: #9db4e8;   /* dimmed text on screen */
+  --screen-dim: #9db4e8;
 
-  --radius: 0px;           /* pixel squares: no rounding */
-  --space: 1rem;
+  /* spacing scale — one rhythm, no ad-hoc gaps */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 5rem;
+
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--paper); /* overscroll shows white, not grey */
+}
 
 body {
   font-family: var(--font-body);
@@ -72,87 +80,123 @@ body {
   font-size: 15px;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: none; /* mono honesty */
 }
 
-/* display chrome stays in the pixel font */
+/* ---- links ---- */
+a {
+  color: var(--blue);
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--blue-bright); text-decoration: underline; }
+
+/* visible keyboard focus — not just a mouse hover */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+::selection { background: var(--blue); color: var(--paper); }
+
+/* ---- display chrome stays pixel ---- */
 h1, h2, h3, .eyebrow, .logo, nav a, .btn, .group-title, .tag, .screen-head {
   font-family: var(--font);
 }
+code, kbd, pre { font-family: var(--font-body); }
 
-code, kbd, pre {
-  font-family: var(--font-body);
-}
-
-a { color: var(--blue); text-decoration: none; }
-a:hover { color: var(--blue-bright); text-decoration: underline; }
+h1, h2, h3 { text-wrap: balance; }
+p, .lede, .section-sub { text-wrap: pretty; }
 
 /* ---- top bar ---- */
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  gap: var(--s4);
+  padding: var(--s4) var(--s6);
   border-bottom: 2px solid var(--line);
   background: var(--sky);
   position: sticky;
   top: 0;
   z-index: 10;
 }
-.logo {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--ink);
-}
+.logo { font-weight: 700; font-size: 1rem; color: var(--ink); white-space: nowrap; }
 .logo .pixel { color: var(--blue); }
+nav { display: flex; align-items: center; }
 nav a {
-  margin-left: 1.25rem;
+  margin-left: var(--s5);
   font-size: 0.8rem;
   color: var(--ink);
+  white-space: nowrap;
 }
-nav a:hover { color: var(--blue); }
+nav a:hover { color: var(--blue); text-decoration: none; }
 
 /* ---- layout ---- */
 main {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 2rem 2rem 4rem;
+  padding: var(--s7) var(--s6) var(--s8);
 }
-section { margin-top: 4rem; }
+section { margin-top: var(--s8); }
+section:first-of-type { margin-top: 0; }
+
+/* anchor jumps clear the sticky bar — classic miss */
+#skills, #install { scroll-margin-top: calc(var(--s6) + 2rem); }
 
 /* ---- hero ---- */
-.hero { text-align: center; padding-top: 2.5rem; }
+.hero {
+  text-align: center;
+  padding-top: var(--s6);
+  position: relative;
+}
+/* faint pixel-dot texture, theme-consistent, never loud */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
 .eyebrow {
   display: inline-block;
   font-size: 0.75rem;
+  letter-spacing: 0.08em;
   color: var(--blue);
   border: 2px solid var(--blue);
-  padding: 0.25rem 0.75rem;
-  margin-bottom: 1.5rem;
+  padding: var(--s2) var(--s3) var(--s2) var(--s4);
+  margin-bottom: var(--s6);
   background: var(--paper);
 }
 .hero h1 {
   font-size: clamp(1.6rem, 4vw, 2.6rem);
-  line-height: 1.35;
-  margin-bottom: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: var(--s5);
+  letter-spacing: 0.02em;
 }
 .hero h1 .accent { color: var(--blue); }
 .lede {
-  max-width: 640px;
-  margin: 0 auto 2rem;
+  max-width: 58ch;
+  margin: 0 auto var(--s6);
   font-size: 0.95rem;
-  color: #33487d;
+  color: var(--ink-soft);
 }
-.hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-cta { display: flex; gap: var(--s4); justify-content: center; flex-wrap: wrap; }
 
 .btn {
   display: inline-block;
-  font-family: var(--font);
   font-size: 0.85rem;
   font-weight: 700;
-  padding: 0.7rem 1.4rem;
+  letter-spacing: 0.06em;
+  padding: var(--s3) var(--s5);
   border: 2px solid var(--blue);
   cursor: pointer;
-  transition: transform 0.06s ease;
+  transition: background-color 0.12s ease, color 0.12s ease, transform 0.06s ease;
 }
 .btn.primary { background: var(--blue); color: var(--paper); }
 .btn.primary:hover { background: var(--blue-bright); text-decoration: none; }
@@ -163,92 +207,153 @@ section { margin-top: 4rem; }
 /* ---- section headers ---- */
 h2 {
   font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: var(--s5);
+  padding-bottom: var(--s3);
   border-bottom: 2px solid var(--ink);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--s3);
 }
 h2::before {
   content: "";
   width: 14px;
   height: 14px;
+  flex-shrink: 0;
   background: var(--blue);
   display: inline-block;
   box-shadow: 14px 0 0 var(--ink);
 }
-.section-sub { font-size: 0.85rem; color: #33487d; margin: -1rem 0 1.5rem; }
+.section-sub {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: calc(var(--s5) * -1 + var(--s3)) 0 var(--s5);
+  max-width: 60ch;
+}
+.section-sub code { font-size: 0.8rem; }
 
 /* ---- skill grid ---- */
 .group-title {
   font-size: 0.85rem;
+  letter-spacing: 0.1em;
   color: var(--blue);
-  margin: 2rem 0 0.75rem;
+  margin: var(--s6) 0 var(--s3);
 }
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1rem;
+  gap: 1.25rem;
 }
 .card {
   border: 2px solid var(--line);
   background: var(--paper);
-  padding: 1.25rem;
+  padding: var(--s5) var(--s5) var(--s4);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  gap: var(--s3);
+  transition: border-color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
 }
-.card:hover { border-color: var(--blue); box-shadow: 4px 4px 0 var(--sky); }
+.card:hover {
+  border-color: var(--blue);
+  box-shadow: 4px 4px 0 var(--sky);
+  transform: translateY(-2px);
+}
 .card h3 { font-size: 1rem; color: var(--ink); }
 .card .tag {
   font-size: 0.65rem;
+  letter-spacing: 0.1em;
   color: var(--blue);
   border: 1px solid var(--blue);
-  padding: 0.1rem 0.4rem;
+  padding: 0.1rem 0.45rem;
   align-self: flex-start;
 }
-.card p { font-size: 0.8rem; color: #33487d; flex: 1; }
-.card a.more { font-size: 0.75rem; font-weight: 700; }
+.card p { font-size: 0.8125rem; color: var(--ink-soft); flex: 1; line-height: 1.7; }
+.card a.more { font-size: 0.75rem; font-weight: 700; display: inline-block; margin-top: var(--s2); }
 
-/* ---- install / screen blocks ---- */
+/* ---- install / screen blocks (handheld panels) ---- */
 .screen {
   background: var(--screen);
   color: var(--screen-text);
   border: 2px solid var(--ink);
-  padding: 1.25rem 1.5rem;
-  margin-top: 1rem;
+  padding: var(--s5) var(--s5) var(--s4);
+  margin-top: var(--s4);
   max-width: 640px;
+  box-shadow: 6px 6px 0 var(--sky);
 }
 .screen .screen-head {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: var(--s3);
   font-size: 0.65rem;
+  letter-spacing: 0.1em;
   color: var(--screen-dim);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--s4);
   border-bottom: 1px dashed var(--screen-dim);
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--s2);
+}
+.screen .screen-head .right { margin-left: auto; }
+/* power LED — the handheld tell */
+.screen .led {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  background: var(--blue-bright);
+  border: 1px solid var(--blue);
+  animation: led 3s steps(2, jump-none) infinite;
+}
+@keyframes led {
+  0%, 55% { opacity: 1; }
+  65%, 100% { opacity: 0.35; }
 }
 .screen pre {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  line-height: 1.9;
+  line-height: 1.85;
   white-space: pre-wrap;
   word-break: break-word;
+  font-variant-numeric: tabular-nums;
 }
 .screen .cmt { color: var(--screen-dim); }
 .screen .cmd { color: var(--screen-text); }
 
-.install-note { font-size: 0.75rem; color: #33487d; margin-top: 0.75rem; }
+.install-note {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: var(--s4);
+  max-width: 60ch;
+}
+.install-note code { font-size: 0.7rem; }
 
 /* ---- footer ---- */
 footer {
   border-top: 2px solid var(--line);
   background: var(--sky);
   text-align: center;
-  padding: 2rem;
+  padding: var(--s6) var(--s4);
   font-size: 0.75rem;
-  color: #33487d;
+  color: var(--ink-soft);
 }
+footer p + p { margin-top: var(--s2); }
 footer a { color: var(--blue); }
+
+/* ---- responsive ---- */
+@media (max-width: 640px) {
+  .topbar { padding: var(--s3) var(--s4); }
+  nav a { margin-left: var(--s4); font-size: 0.72rem; }
+  main { padding: var(--s6) var(--s4) var(--s7); }
+  section { margin-top: var(--s7); }
+  .hero { padding-top: var(--s5); }
+  .eyebrow { margin-bottom: var(--s5); }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { text-align: center; }
+  .grid { grid-template-columns: 1fr; gap: var(--s4); }
+  .group-title { margin-top: var(--s5); }
+  .screen { padding: var(--s4) var(--s4) var(--s3); box-shadow: 4px 4px 0 var(--sky); }
+  .screen pre { font-size: 0.72rem; line-height: 1.8; }
+  footer { padding: var(--s5) var(--s4); }
+}
+
+/* ---- respect motion preferences ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card, .btn, .led { transition: none; animation: none; }
+}

@@ -12,7 +12,7 @@
 
   <header class="topbar">
     <span class="logo"><span class="pixel">■</span> skills</span>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#skills">skills</a>
       <a href="#install">install</a>
       <a href="https://github.com/aewing/skills" target="_blank" rel="noopener">github ↗</a>
@@ -117,14 +117,14 @@
       <p class="section-sub">Pick the path that matches your agent.</p>
 
       <div class="screen">
-        <div class="screen-head"><span>CLAUDE CODE — PLUGIN MARKETPLACE</span><span>1-2-3</span></div>
+        <div class="screen-head"><span class="led" aria-hidden="true"></span><span>CLAUDE CODE — PLUGIN MARKETPLACE</span><span class="right">1-2-3</span></div>
         <pre><span class="cmt"># in Claude Code</span>
 <span class="cmd">/plugin marketplace add aewing/skills</span>
 <span class="cmd">/plugin install rigor-skills@aewing-skills</span></pre>
       </div>
 
       <div class="screen">
-        <div class="screen-head"><span>ANY AGENT — COPY INSTALLER</span><span>ALT</span></div>
+        <div class="screen-head"><span class="led" aria-hidden="true"></span><span>ANY AGENT — COPY INSTALLER</span><span class="right">ALT</span></div>
         <pre><span class="cmd">git clone https://github.com/aewing/skills.git</span>
 <span class="cmd">cd skills && ./install.sh</span>
 
