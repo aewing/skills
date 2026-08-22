@@ -5,19 +5,20 @@
     "email": "aewing@users.noreply.github.com"
   },
   "metadata": {
-    "description": "Curated agent skills: execution-rigor, truth-loop, goodtalk, wat, coherence-engine, verification-hygiene, adversarial-reviewer, keep-going, roast-review, and tui-design.",
-    "version": "1.1.0"
+    "description": "Curated agent skills: execution-rigor, truth-loop, goodtalk, focus-group, wat, coherence-engine, verification-hygiene, adversarial-reviewer, keep-going, roast-review, and tui-design.",
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "rigor-skills",
-      "description": "Execution and reasoning rigor, instruction-language standards, focused long-horizon work, evidence-first review, scannable responses, and TUI craft.",
+      "description": "Execution and reasoning rigor, instruction-language standards, synthetic product review, focused long-horizon work, evidence-first review, scannable responses, and TUI craft.",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/execution-rigor",
         "./skills/truth-loop",
         "./skills/goodtalk",
+        "./skills/focus-group",
         "./skills/wat",
         "./skills/coherence-engine",
         "./skills/verification-hygiene",

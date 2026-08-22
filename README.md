@@ -65,6 +65,7 @@ and calm.
 | [coherence-engine](skills/coherence-engine/SKILL.md) | Focus and pruning for long-horizon tasks: flow perception, cut what does not serve the core intent, autonomy with a clear reversible/irreversible line. |
 | [verification-hygiene](skills/verification-hygiene/SKILL.md) | Prove claims against the real artifact: the narrowest falsifying check, required consequences per change type, and rejection of false green. |
 | [adversarial-reviewer](skills/adversarial-reviewer/SKILL.md) | Evidence-first review with one verdict (SHIP / BLOCKED / REWORK / MORE PROOF), highest blast radius first, smallest honest remediation. |
+| [focus-group](skills/focus-group/SKILL.md) | Run clearly labeled synthetic user panels with causal participant selection, complete bounded transcripts, evidence-aware findings, and predictable project-owned outcomes. |
 
 ### Responses and craft
 

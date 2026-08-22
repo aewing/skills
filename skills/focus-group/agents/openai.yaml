@@ -1,0 +1,4 @@
+interface:
+  display_name: "Focus Group"
+  short_description: "Run consistent synthetic user panels with outcomes"
+  default_prompt: "Use $focus-group to review this product with a varied synthetic user panel, preserve the complete bounded transcript, and route every finding into a project-standard outcome."
