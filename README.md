@@ -74,6 +74,7 @@ and calm.
 | [wat](skills/wat/SKILL.md) | ADHD-friendly response overlay: answer first, one screen, evidence kept, one next action. For status, summaries, and handoffs. |
 | [roast-review](skills/roast-review/SKILL.md) | Evidence-backed critique: funny, ruthless, specific reduction to the target's weaknesses and self-owns, plus a concrete escape plan (ROAST.md / PROPOSAL.md / EVIDENCE.md). |
 | [tui-design](skills/tui-design/SKILL.md) | Terminal UI craft: layout paradigms, keyboard and focus models, semantic color, animation, and anti-pattern and compatibility checklists. Framework-agnostic. |
+| [headless-lanes](skills/headless-lanes/SKILL.md) | Run a mission through headless agent CLIs (any providers) in parallel lanes from one overseer session: recon and callable-model proofs, scorecard routing by the user's quality/speed/cost order, rooms and lane briefs, fixed signals over the project's coordination substrate, dead-air monitoring, verified review and landing. |
 
 ## Contributing back
 

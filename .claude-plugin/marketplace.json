@@ -5,8 +5,8 @@
     "email": "aewing@users.noreply.github.com"
   },
   "metadata": {
-    "description": "Curated agent skills: execution-rigor, truth-loop, goodtalk, focus-group, wat, coherence-engine, verification-hygiene, adversarial-reviewer, keep-going, roast-review, and tui-design.",
-    "version": "1.2.0"
+    "description": "Curated agent skills: execution-rigor, truth-loop, goodtalk, focus-group, wat, coherence-engine, verification-hygiene, adversarial-reviewer, keep-going, roast-review, and tui-design, and headless-lanes.",
+    "version": "1.3.0"
   },
   "plugins": [
     {
@@ -25,7 +25,8 @@
         "./skills/adversarial-reviewer",
         "./skills/keep-going",
         "./skills/roast-review",
-        "./skills/tui-design"
+        "./skills/tui-design",
+        "./skills/headless-lanes"
       ]
     }
   ]
